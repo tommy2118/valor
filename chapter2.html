@@ -28,23 +28,69 @@
     .manga-panel img:hover {
       transform: scale(1.05);
     }
+      #mobile-menu {
+        transition: all 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.hidden {
+        max-height: 0;
+      }
+
+    #mobile-menu:not(.hidden) {
+      max-height: 300px;
+    }
+
+    nav a {
+      transition: all 0.2s ease-in-out;
+    }
+
+    #mobile-menu-button svg {
+      transition: opacity 0.2s ease-in-out;
+    }
   </style>
   <title>The Shadow of Valor - Chapter 2</title>
 </head>
 <body class="bg-gray-900 text-white">
   <!-- Header -->
-  <header class="bg-black text-white py-4">
-    <div class="container mx-auto flex justify-between items-center px-4">
+<header class="bg-black text-white py-4">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold">The Shadow of Valor</a>
-      <nav class="flex">
-        <a href="index.html" class="px-4 hover:underline">Home</a>
-        <a href="prologue.html" class="px-4 hover:underline">Prologue</a>
-        <a href="chapter1.html" class="px-4 hover:underline">Chapter 1</a>
-        <a href="chapter2.html" class="px-4 hover:underline active">Chapter 2</a>
-        <a href="chapter3.html" class="px-4 hover:underline">Chapter 3</a>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+        <svg class="h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="h-6 w-6 hidden" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Desktop navigation -->
+      <nav class="hidden md:flex" aria-label="Desktop navigation">
+        <a href="index.html" class="px-4 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+        <a href="prologue.html" class="px-4 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Prologue</a>
+        <a href="chapter1.html" class="px-4 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Chapter 1</a>
+        <a href="chapter2.html" class="px-4 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Chapter 2</a>
+        <a href="chapter3.html" class="px-4 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Chapter 3</a>
       </nav>
     </div>
-  </header>
+
+    <!-- Mobile navigation -->
+    <nav id="mobile-menu" class="hidden md:hidden" aria-label="Mobile navigation">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+        <a href="prologue.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Prologue</a>
+        <a href="chapter1.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Chapter 1</a>
+        <a href="chapter2.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Chapter 2</a>
+        <a href="chapter3.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Chapter 3</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
 
   <!-- Breadcrumb -->
   <div class="breadcrumb bg-gray-800 text-sm py-3 px-4">
@@ -102,6 +148,9 @@
         <option value="chapter3.html">Chapter 3: First Mission</option>
       </select>
     </div>
+    <div class="text-center mt-8">
+      <a href="chapter3.html" class="bg-gray-800 text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide hover:bg-gray-700 transition duration-200">Continue to Chapter 3</a>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -110,6 +159,40 @@
       <p>&copy; 2023 The Shadow of Valor. All rights reserved.</p>
     </div>
   </footer>
+<script>
+  // Get the current page URL
+  const currentPage = window.location.pathname.split('/').pop() || 'chapter2.html';
+
+  // Add active state to current page link
+  document.querySelectorAll('nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('bg-gray-800');
+      link.classList.remove('text-gray-300');
+      link.classList.add('text-white');
+    }
+  });
+
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+      mobileMenu.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  });
+</script>
 </body>
 </html>
 
