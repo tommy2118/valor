@@ -13,26 +13,40 @@
       background-color: rgba(255, 255, 255, 0.2);
       font-weight: bold;
     }
-    .breadcrumb a {
-      color: #ffffff;
-      opacity: 0.7;
-      transition: opacity 0.3s;
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
     }
-    .breadcrumb a:hover {
-      opacity: 1;
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-    .manga-panel img {
-      border-radius: 0.5rem;
-      transition: transform 0.3s ease;
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+      z-index: 0;
     }
-    .manga-panel img:hover {
-      transform: scale(1.05);
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
     }
   </style>
   <title>The Shadow of Valor - Home</title>
 </head>
 <body class="bg-gray-900 text-white">
-  <!-- Header -->
   <header class="bg-black text-white py-4">
     <div class="container mx-auto flex justify-between items-center px-4">
       <a href="index.html" class="text-2xl font-bold">The Shadow of Valor</a>
@@ -48,9 +62,19 @@
 
   <!-- Hero Section -->
   <main>
-    <section class="hero h-screen flex items-center justify-center">
-      <div class="hero-overlay flex items-center justify-center">
-        <div class="text-center">
+    <section class="hero">
+      <!-- Video Background -->
+      <video autoplay loop muted playsinline>
+        <source src="images/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Dark Overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Hero Content -->
+      <div class="hero-content flex items-center justify-center h-full">
+        <div>
           <h1 class="text-6xl font-bold mb-4">The Shadow of Valor</h1>
           <p class="text-2xl mb-8">The untold story of Marcus Steele</p>
           <a href="prologue.html" class="bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-gray-200 transition duration-200">Start Reading</a>
@@ -74,7 +98,6 @@
     <section class="container mx-auto px-4 py-8">
       <h3 class="text-2xl font-bold mb-4">Explore Chapters</h3>
       <select class="bg-gray-700 text-white px-4 py-2 rounded" onchange="location = this.value;">
-        <option value="index.html" selected >Home</option>
         <option value="prologue.html">Prologue</option>
         <option value="chapter1.html">Chapter 1: The Recruitment</option>
         <option value="chapter2.html">Chapter 2: Training Arc</option>
