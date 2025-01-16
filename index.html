@@ -74,6 +74,75 @@
       #mobile-menu-button svg {
         transition: opacity 0.2s ease-in-out;
       }
+      .scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mouse {
+  width: 25px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wheel {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  animation: mouseWheel 1.5s infinite;
+}
+
+  @keyframes mouseWheel {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .arrow-1,
+  .arrow-2,
+  .arrow-3 {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+    margin: -5px auto 0;
+    animation: arrowAnimation 1.5s infinite;
+  }
+
+  .arrow-2 {
+    animation-delay: -0.25s;
+  }
+
+  .arrow-3 {
+    animation-delay: -0.5s;
+  }
+
+  @keyframes arrowAnimation {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-10px, -10px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+  }
     </style>
     <title>The Shadow of Valor - Home</title>
   </head>
@@ -134,6 +203,17 @@
             <h1 class="text-6xl font-bold mb-4">The Shadow of Valor</h1>
             <p class="text-2xl mb-8">The untold story of Marcus Steele</p>
             <a href="prologue.html" class="bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-gray-200 transition duration-200">Start Reading</a>
+          </div>
+          <!-- Scroll Indicator -->
+          <div class="scroll-indicator mt-8">
+            <div class="mouse">
+              <div class="wheel"></div>
+            </div>
+            <div>
+              <span class="arrow-1"></span>
+              <span class="arrow-2"></span>
+              <span class="arrow-3"></span>
+            </div>
           </div>
         </div>
       </section>
