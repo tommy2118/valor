@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    nav a.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      font-weight: bold;
+    }
+    .breadcrumb a {
+      color: #ffffff;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .breadcrumb a:hover {
+      opacity: 1;
+    }
+    .manga-panel img {
+      border-radius: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .manga-panel img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+  <title>The Shadow of Valor - Chapter 3</title>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Header -->
+  <header class="bg-black text-white py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a href="index.html" class="text-2xl font-bold">The Shadow of Valor</a>
+      <nav class="flex">
+        <a href="index.html" class="px-4 hover:underline">Home</a>
+        <a href="chapter1.html" class="px-4 hover:underline">Chapter 1</a>
+        <a href="chapter2.html" class="px-4 hover:underline">Chapter 2</a>
+        <a href="chapter3.html" class="px-4 hover:underline active">Chapter 3</a>
+        <a href="characters.html" class="px-4 hover:underline">Characters</a>
+        <a href="world.html" class="px-4 hover:underline">World</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb bg-gray-800 text-sm py-3 px-4">
+    <a href="index.html">Home</a> / <a href="chapter3.html">Chapter 3</a>
+  </div>
+
+  <!-- Chapter Content -->
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8 text-center" id="chapter-3">Chapter 3: First Mission</h1>
+    <p class="mb-8">Marcus Steele's first mission as Specter 6 would define his role within Project Apex. Tasked with infiltrating a high-profile corporate retreat, Marcus needed to uncover a mole selling quantum computing secrets to foreign agents. Failure was not an option.</p>
+
+    <div class="grid grid-cols-2 gap-8 mb-12">
+      <div class="manga-panel">
+        <img src="images/mission1.webp" alt="Marcus in a corporate setting">
+        <p class="text-center italic">The disguise was flawless, but the stakes were higher than ever.</p>
+        <p>Marcus blended seamlessly into the crowd, his tailored suit hiding a myriad of tactical tools. His every movement was calculated, his demeanor exuding calm professionalism.</p>
+      </div>
+      <div class="manga-panel">
+        <img src="images/mission2.webp" alt="Marcus tailing a target">
+        <div class="dialogue bg-gray-800 p-4 rounded">
+          <p><strong>Harper (via comms):</strong> "Your target is on the move. Keep it quiet, Specter 6."</p>
+          <p><strong>Marcus:</strong> "Understood."</p>
+        </div>
+        <p>Marcus’s precision and focus were unmatched as he tailed the suspect through the luxury resort. The faint hum of live music and laughter provided the perfect cover for his silent pursuit.</p>
+      </div>
+      <div class="manga-panel">
+        <p class="text-center italic">The tension was palpable.</p>
+        <img src="images/mission3.webp" alt="Marcus in a confrontation">
+        <p>Face-to-face with his target, Marcus had to balance diplomacy with the threat of force. His piercing gaze conveyed a silent warning, his hand subtly brushing the concealed weapon at his side.</p>
+      </div>
+      <div class="manga-panel">
+        <img src="images/mission4.webp" alt="Marcus using tech gear">
+        <p class="sfx text-center italic">beep beep beep</p>
+        <p>Using a hidden interface embedded in his cufflink, Marcus extracted critical data from the target’s encrypted device. His fingers moved with practiced efficiency, bypassing security protocols with ease.</p>
+      </div>
+      <div class="col-span-2 manga-panel relative">
+        <img src="images/mission5.webp" alt="Escape sequence">
+        <div class="dialogue bg-gray-800 p-4 rounded absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+          <p><strong>Harper:</strong> "Extraction point is compromised. Improvise!"</p>
+          <p><strong>Marcus:</strong> "Copy that. I’ll find another way."</p>
+        </div>
+        <p>The tranquil resort became a maze of danger as Marcus’s calculated escape turned into a high-stakes chase. Security personnel, alerted by the breached device, were closing in fast.</p>
+      </div>
+      <div class="manga-panel">
+        <img src="images/mission6.webp" alt="Marcus scaling a wall">
+        <p class="sfx text-center italic">clink clink</p>
+        <p>Scaling the resort’s outer wall, Marcus relied on his enhanced gloves to maintain a secure grip. The distant city lights reflected in his sharp, determined eyes.</p>
+      </div>
+      <div class="manga-panel">
+        <img src="images/mission7.webp" alt="Marcus reaching an extraction vehicle">
+        <p class="dialogue bg-gray-800 p-4 rounded"><strong>Harper:</strong> "Vehicle en route. ETA two minutes."</p>
+        <p>With adrenaline pumping and his cover intact, Marcus sprinted through an alley, evading the last of his pursuers.</p>
+      </div>
+    </div>
+
+    <p>The mission’s success came at a cost—a scar below Marcus's hairline, earned in a split-second confrontation that nearly derailed the operation. But he had proven himself as Specter 6, securing vital intelligence that would tilt the balance in Project Apex’s favor.</p>
+    <p>As Marcus watched the target's encrypted files decrypt in the safety of their command center, he couldn’t shake Harper’s earlier words: "Your greatest asset is your ability to adapt. Never forget that."</p>
+
+    <!-- Dropdown Navigation for Chapters -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-4">Explore Chapters</h2>
+      <select class="bg-gray-700 text-white px-4 py-2 rounded" onchange="location = this.value;">
+        <option value="chapter1.html">Chapter 1: The Recruitment</option>
+        <option value="chapter2.html">Chapter 2: Training Arc</option>
+        <option value="chapter3.html" selected>Chapter 3: First Mission</option>
+      </select>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2023 The Shadow of Valor. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
