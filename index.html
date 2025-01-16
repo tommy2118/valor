@@ -21,6 +21,13 @@
     .breadcrumb a:hover {
       opacity: 1;
     }
+    .manga-panel img {
+      border-radius: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .manga-panel img:hover {
+      transform: scale(1.05);
+    }
   </style>
   <title>The Shadow of Valor - Home</title>
 </head>
@@ -42,7 +49,7 @@
   <!-- Hero Section -->
   <main>
     <section class="hero h-screen flex items-center justify-center">
-      <div class="hero-overlay absolute inset-0 flex items-center justify-center">
+      <div class="hero-overlay flex items-center justify-center">
         <div class="text-center">
           <h1 class="text-6xl font-bold mb-4">The Shadow of Valor</h1>
           <p class="text-2xl mb-8">The untold story of Marcus Steele</p>
@@ -53,7 +60,7 @@
 
     <!-- Breadcrumb -->
     <div class="breadcrumb bg-gray-800 text-sm py-3 px-4">
-      <a href="index.html">Home</a> / <a href="chapter1.html">Chapter 1</a>
+      <a href="index.html">Home</a> / <a href="prologue.html">Prologue</a>
     </div>
 
     <!-- Content -->
@@ -67,7 +74,9 @@
     <section class="container mx-auto px-4 py-8">
       <h3 class="text-2xl font-bold mb-4">Explore Chapters</h3>
       <select class="bg-gray-700 text-white px-4 py-2 rounded" onchange="location = this.value;">
-        <option value="chapter1.html" selected>Chapter 1: The Recruitment</option>
+        <option value="index.html" selected >Home</option>
+        <option value="prologue.html">Prologue</option>
+        <option value="chapter1.html">Chapter 1: The Recruitment</option>
         <option value="chapter2.html">Chapter 2: Training Arc</option>
         <option value="chapter3.html">Chapter 3: First Mission</option>
       </select>
